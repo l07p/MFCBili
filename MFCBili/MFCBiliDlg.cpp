@@ -8,6 +8,8 @@
 #include "MFCBiliDlg.h"
 #include "afxdialogex.h"
 
+#include "Mydialog.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -160,5 +162,6 @@ void CMFCBiliDlg::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
 	//MessageBox(_T("Hello World."), _T("FirstMessage"), MB_YESNOCANCEL | MB_ICONWARNING);
-	
+	CMydialog dlg;
+	dlg.DoModal();
 }
