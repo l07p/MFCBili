@@ -29,4 +29,6 @@ public:
 //		CDialogEx::PostNcDestroy();
 //	}
 //	virtual void PostNcDestroy();
+	virtual BOOL OnInitDialog();
+	virtual void OnOK();
 };

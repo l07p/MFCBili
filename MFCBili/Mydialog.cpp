@@ -6,6 +6,7 @@
 #include "Mydialog.h"
 #include "afxdialogex.h"
 
+extern CString strText;
 
 // CMydialog dialog
 
@@ -50,3 +51,22 @@ END_MESSAGE_MAP()
 //	delete this;
 //	CDialogEx::PostNcDestroy();
 //}
+
+BOOL CMydialog::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  Add extra initialization here
+	SetDlgItemText(IDC_SUB_EDIT, strText);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+				  // EXCEPTION: OCX Property Pages should return FALSE
+}
+
+
+void CMydialog::OnOK()
+{
+	// TODO: Add your specialized code here and/or call the base class
+	GetDlgItemText(IDC_SUB_EDIT, strText);
+	CDialogEx::OnOK();
+}

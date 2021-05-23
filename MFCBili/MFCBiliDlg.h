@@ -35,5 +35,5 @@ protected:
 public:
 	afx_msg void OnBnClickedButton1();
 
-	CMydialog* pDlg;
+	CMydialog* pDlg = NULL;
 };
