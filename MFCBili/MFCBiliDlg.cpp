@@ -154,17 +154,15 @@ HCURSOR CMFCBiliDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-CString strText;
 
 void CMFCBiliDlg::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
-	//MessageBox(_T("Hello World."), _T("FirstMessage"), MB_YESNOCANCEL | MB_ICONWARNING);
-	GetDlgItemText(IDC_BILI_EDIT, strText);
+	
 	// modal method calling, only it shown in front, impossible to 2nd
 	CMydialog dlg;
+	dlg.m_pWnd = this;
 	dlg.DoModal();
-	SetDlgItemText(IDC_BILI_EDIT, strText);
 	
 	// new pointer, more than one possible
 	//pDlg = new CMydialog();

@@ -21,6 +21,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	CWnd * m_pWnd;
 //	afx_msg void OnBnClickedCancel();
 //	virtual void PostNcDestroy()
 //	{
