@@ -20,4 +20,13 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
+public:
+//	afx_msg void OnBnClickedCancel();
+//	virtual void PostNcDestroy()
+//	{
+//		// TODO: Add your specialized code here and/or call the base class
+//		//delete this;
+//		CDialogEx::PostNcDestroy();
+//	}
+//	virtual void PostNcDestroy();
 };

@@ -7,7 +7,6 @@
 #define IDS_ABOUTBOX                    101
 #define IDD_MFCBILI_DIALOG              102
 #define IDR_MAINFRAME                   128
-#define IDD_DIALOG1                     129
 #define IDD_MYDIALOG                    129
 #define IDC_BUTTON1                     1000
 #define IDC_EDIT1                       1001

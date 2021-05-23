@@ -28,7 +28,25 @@ void CMydialog::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(CMydialog, CDialogEx)
+//	ON_BN_CLICKED(IDCANCEL, &CMydialog::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
 // CMydialog message handlers
+
+
+//void CMydialog::OnBnClickedCancel()
+//{
+//	// TODO: Add your control notification handler code here
+//	DestroyWindow();
+//	CDialogEx::OnCancel();
+//}
+
+
+
+//void CMydialog::PostNcDestroy()
+//{
+//	// TODO: Add your specialized code here and/or call the base class
+//	delete this;
+//	CDialogEx::PostNcDestroy();
+//}
