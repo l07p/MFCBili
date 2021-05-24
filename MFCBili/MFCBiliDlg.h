@@ -34,6 +34,13 @@ protected:
 
 public:
 	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedButtonGrey();
 
 	CMydialog* pDlg = NULL;
+
+	CButton* pButton;
+	// DDX variable of edit
+	CEdit mEditVar;
+	// type of variable
+	CString m_str1;
 };

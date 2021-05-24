@@ -52,6 +52,7 @@ END_MESSAGE_MAP()
 
 CMFCBiliDlg::CMFCBiliDlg(CWnd* pParent /*=nullptr*/)
 	: CDialog(IDD_MFCBILI_DIALOG, pParent)
+	, m_str1(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -59,6 +60,8 @@ CMFCBiliDlg::CMFCBiliDlg(CWnd* pParent /*=nullptr*/)
 void CMFCBiliDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT_VAR1, mEditVar);
+	DDX_Text(pDX, IDC_EDIT_VAR1, m_str1);
 }
 
 BEGIN_MESSAGE_MAP(CMFCBiliDlg, CDialog)
@@ -66,6 +69,7 @@ BEGIN_MESSAGE_MAP(CMFCBiliDlg, CDialog)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CMFCBiliDlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON_GREY, &CMFCBiliDlg::OnBnClickedButtonGrey)
 END_MESSAGE_MAP()
 
 
@@ -101,6 +105,8 @@ BOOL CMFCBiliDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	pButton = (CButton*)GetDlgItem(IDC_BUTTON_GREY);
+	mEditVar.SetWindowText(_T("default txt"));
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -160,12 +166,26 @@ void CMFCBiliDlg::OnBnClickedButton1()
 	// TODO: Add your control notification handler code here
 	
 	// modal method calling, only it shown in front, impossible to 2nd
-	CMydialog dlg;
-	dlg.m_pWnd = this;
-	dlg.DoModal();
+	//CMydialog dlg;
+	//dlg.m_pWnd = this;
+	//dlg.DoModal();
 	
 	// new pointer, more than one possible
 	//pDlg = new CMydialog();
 	//pDlg->Create(IDD_MYDIALOG, this);
 	//pDlg->ShowWindow(SW_SHOW);
+
+	// open source utilities
+	SetDlgItemText(IDC_BILI_EDIT, _T("hello button typed."));
+}
+
+
+void CMFCBiliDlg::OnBnClickedButtonGrey()
+{
+	// TODO: Add your control notification handler code here
+	//pButton->EnableWindow(FALSE);
+	UpdateData(TRUE);
+	MessageBox(m_str1);
+	m_str1 = _T("changed by clicking button.");
+	UpdateData(FALSE);
 }
